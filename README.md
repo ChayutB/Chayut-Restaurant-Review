@@ -1,23 +1,3 @@
-### Note from me ###
-This project is for become front-end nanodegree course Udacity.
-I am implement a responsive assibility and offline base website.
-
-### This projectr consist of ###
-1. Main page 
-   > index.html
-   > main.js
-   This page will show map and all list of restaurants in the website
-
-2. Restaurant page
-   > restaurant.html
-   > restaurant_info.js
-   This page will show more information for eash restaurant if user click any restaurant in the main page
-
-3. All data that show on this website will keep in `data>restaurant.json`
-
-------------------------------------------------------
-Original `README`
-
 # Mobile Web Specialist Certification Course
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_

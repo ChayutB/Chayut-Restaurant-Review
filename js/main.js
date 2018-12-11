@@ -164,7 +164,7 @@ createRestaurantHTML = (restaurant) => {
   image.alt = DBHelper.imageAltForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   name.tabIndex = 0;
   li.append(name);
@@ -210,9 +210,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
-/**
- * set tapindex in map
- */
- const map_tabindex = document.getElementById('map');
- map_tabindex.tabIndex = 1;

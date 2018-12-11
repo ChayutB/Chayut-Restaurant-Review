@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // Install service worker
-var CACHE_NAME = 'my-site-cache-v2';
+var CACHE_NAME = 'my-site-cache-v5';
 var urlsToCache = [
   '/',
   '/css/styles.css',
@@ -34,19 +34,21 @@ self.addEventListener('install', function(event) {
 });
 
 //for remove old cache
-self.addEventListener('activate', function(event){
+self.addEventListener('activate', function(event) {
+  var cacheWhitelist = CACHE_NAME;
   event.waitUntil(
-    cacheNames.keys().then(function(cacheNames){
-      return Promide.all(
-        cacheNames.filter(function(cacheNames){
-          return cacheNames.startsWith('my-site-cache') && cacheNames != CACHE_NAME;
-        }).map(function(cacheNames){
-          return cache.delete(cacheNames);
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
         })
-      )
+      );
     })
   );
 });
+
 
 //action when this page fetch
 self.addEventListener('fetch', function(event) {

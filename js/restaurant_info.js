@@ -131,7 +131,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h1');
+  const title = document.createElement('h2');
   title.classList = 'section-head'
   title.innerHTML = 'Reviews';
   title.tabIndex = 0;
@@ -201,9 +201,3 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
-/**
- * set tapindex in map
- */
- const map_tabindex = document.getElementById('map');
- map_tabindex.tabIndex = 1;
